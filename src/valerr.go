@@ -20,7 +20,7 @@ type Result struct {
 
 //Debug as container
 type Debug struct {
-	usualErrorPosition int
+	UsualErrorPosition int
 }
 
 //Results defineded type that array of Result
@@ -38,7 +38,7 @@ func CreateResultDefault() Result {
 //NewDebugger return new debugger as it default set
 func NewDebugger() Debug {
 	return Debug{
-		usualErrorPosition: 1,
+		UsualErrorPosition: 1,
 	}
 }
 
@@ -84,13 +84,13 @@ func (Debug Debug) Sequence(results ...[]interface{}) (rs Results) {
 	rs = make([]Result, 0)
 	for i, r := range results {
 		rs = append(rs, CreateResultDefault())
-		if r[Debug.usualErrorPosition] != nil { // error
+		if r[Debug.UsualErrorPosition] != nil { // error
 			rs[i].ErrWhere = i
-			rs[i].Err = fmt.Errorf("%v", r[Debug.usualErrorPosition])
+			rs[i].Err = fmt.Errorf("%v", r[Debug.UsualErrorPosition])
 			continue
 		}
 
-		rs[i].Value = r[0:Debug.usualErrorPosition]
+		rs[i].Value = r[0:Debug.UsualErrorPosition]
 	}
 	return
 }
