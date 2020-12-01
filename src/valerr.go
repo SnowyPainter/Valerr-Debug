@@ -42,8 +42,8 @@ func NewDebugger() Debug {
 	}
 }
 
-//Warp return interface array and pass multiple value return function result.
-func Warp(t ...interface{}) []interface{} {
+//Wrap return interface array and pass multiple value return function result.
+func Wrap(t ...interface{}) []interface{} {
 	return t
 }
 

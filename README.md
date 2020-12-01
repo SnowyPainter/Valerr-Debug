@@ -36,7 +36,7 @@ Sequence let you know what function made error. (by indexing)
 
 ***Simple Example with ForEach***
 ``` Go
-debug.Sequence(Warp(Chicken()), Warp(Rose())).ForEach(func(i int, r Result) {
+debug.Sequence(Wrap(Chicken()), Wrap(Rose())).ForEach(func(i int, r Result) {
 	if r.Err != nil {
 		fmt.Println("Error At ", r.ErrWhere, ":", r.Err.Error())
 		return

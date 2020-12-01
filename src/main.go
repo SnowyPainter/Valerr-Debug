@@ -23,7 +23,7 @@ func main() {
 		fmt.Println("Failed to Run :", e.Error())
 	})
 
-	debug.Sequence(Warp(Chicken()), Warp(Rose())).ForEach(func(i int, r Result) {
+	debug.Sequence(Wrap(Chicken()), Wrap(Rose())).ForEach(func(i int, r Result) {
 		if r.Err != nil {
 			fmt.Println("Error At ", r.ErrWhere, ":", r.Err.Error())
 			return
